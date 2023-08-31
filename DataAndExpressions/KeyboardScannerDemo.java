@@ -1,11 +1,22 @@
 import java.util.Scanner;
 
+/**
+ * This is a javadoc comment.
+ * It should describe the class or method that comes next.
+ * 
+ * e.g.
+ * This class includes code to demonstrate use of a Scanner for
+ * reading keyboard input.
+ * 
+ * @author mvail
+ * @author meToo
+ */
 public class KeyboardScannerDemo {
     public static void main(String[] args) {
         /*
          * Read text input and echo
          */
-        Scanner kbd = new Scanner(System.in);
+        Scanner kbd = new Scanner(System.in); //@keyterm keyboard Scanner
         
         System.out.print("Enter a sentence: ");
 
@@ -44,9 +55,9 @@ public class KeyboardScannerDemo {
 
         String sentence = kbd.nextLine();
 
-        Scanner lineScanner = new Scanner(sentence);
+        Scanner lineScanner = new Scanner(sentence); //@keyterm String Scanner
 
-        String firstWord = lineScanner.next();
+        String firstWord = lineScanner.next(); //safe to use in one String
         String secondWord = lineScanner.next();
 
         System.out.println("First two words were: " + firstWord + " " + secondWord);
