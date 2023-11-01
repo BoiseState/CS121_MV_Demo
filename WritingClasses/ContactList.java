@@ -28,7 +28,7 @@ public class ContactList {
         if (listFile.exists() && listFile.canRead()) {
             try {
                 Scanner fileScan = new Scanner(listFile);
-                String headerLine = fileScan.nextLine();
+                String headerLine = fileScan.nextLine(); //consuming header
                 while (fileScan.hasNextLine()) {
                     String line = fileScan.nextLine();
                     Scanner lineScan = new Scanner(line);
