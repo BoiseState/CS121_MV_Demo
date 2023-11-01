@@ -11,7 +11,9 @@ public class ContactManager {
         final String MENU = "Contact Manager\n"
                 + "(L)oad a new list\n"
                 + "(P)rint list\n"
-                + "(A)dd a new contact\n";
+                + "(A)dd a new contact\n"
+                + "(D)elete a contact\n"
+                + "(Q)uit\n";
 
         Scanner kbd = new Scanner(System.in);
         ContactList list = null;
@@ -38,15 +40,28 @@ public class ContactManager {
                     }
                     break;
                 case "A":
-                    System.out.print("Enter first name: ");
-                    String firstName = kbd.nextLine().trim();
-                    System.out.print("Enter last name: ");
-                    String lastName = kbd.nextLine().trim();
-                    System.out.println("Enter email: ");
-                    String email = kbd.nextLine().trim();
-                    System.out.print("Enter phone number: ");
-                    String phone = kbd.nextLine().trim();
-                    list.addContact(lastName, firstName, email, phone);
+                    if (list == null) {
+                        System.out.println("No list is loaded.");
+                    } else {
+                        System.out.print("Enter first name: ");
+                        String firstName = kbd.nextLine().trim();
+                        System.out.print("Enter last name: ");
+                        String lastName = kbd.nextLine().trim();
+                        System.out.println("Enter email: ");
+                        String email = kbd.nextLine().trim();
+                        System.out.print("Enter phone number: ");
+                        String phone = kbd.nextLine().trim();
+                        list.addContact(lastName, firstName, email, phone);
+                    }
+                    break;
+                case "D":
+                    if (list == null) {
+                        System.out.println("No list is loaded.");
+                    } else {
+                        System.out.print("Enter index of contact to delete: ");
+                        Contact removedContact = list.removeContact(Integer.parseInt(kbd.nextLine().trim()));
+                        System.out.println("Removed:\n\t" + removedContact.toString());
+                    }
                     break;
                 case "Q":
                     break;
