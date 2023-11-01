@@ -64,11 +64,10 @@ public class ContactManager {
                     }
                     break;
                 case "Q":
+                    System.out.println("Until next time...");
                     break;
                 default:
                     System.out.println("Invalid choice");
-            }
-            if (!choice.toUpperCase().equals("Q")) {
             }
         }
 
