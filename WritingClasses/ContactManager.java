@@ -15,9 +15,13 @@ public class ContactManager {
 
         Scanner kbd = new Scanner(System.in);
         ContactList list = null;
-        String choice = "M";
+        String choice = "";
+        System.out.println(MENU);
 
         while (!choice.equals("Q")) {
+            System.out.print("Enter choice (M for menu): ");
+            choice = kbd.nextLine().toUpperCase().trim();
+
             switch (choice) {
                 case "M":
                     System.out.println(MENU);
@@ -50,8 +54,6 @@ public class ContactManager {
                     System.out.println("Invalid choice");
             }
             if (!choice.toUpperCase().equals("Q")) {
-                System.out.print("Enter choice (M for menu): ");
-                choice = kbd.nextLine().toUpperCase().trim();
             }
         }
 
