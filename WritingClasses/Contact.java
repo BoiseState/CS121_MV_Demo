@@ -1,16 +1,20 @@
+import javax.print.attribute.standard.MediaSize.Other;
+
 /**
  * Represents a contact with first and last name,
  * email address, and phone number.
+ * 
  * @author mvail
  */
-public class Contact {
+public class Contact implements Comparable<Contact> {
     private String firstName;
     private String lastName;
     private String email;
     private String phoneNumber;
 
-    /** 
+    /**
      * Initialize a Contact with the given values.
+     * 
      * @param firstName
      * @param lastName
      * @param email
@@ -66,5 +70,29 @@ public class Contact {
     /** Update Contact's phone number */
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
+    }
+
+    @Override
+    public int compareTo(Contact o) {
+        int result = this.lastName.compareTo(o.getLastName());
+        if (result == 0) {
+            result = this.firstName.compareTo(o.getFirstName());
+        }
+        return result;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof Contact) {
+            Contact other = (Contact) o;
+            if (this.lastName.equalsIgnoreCase(other.getLastName())
+                    && this.firstName.equalsIgnoreCase(other.getFirstName())) {
+                return true;
+            } else {
+                return false;
+            }
+        } else {
+            return super.equals(o);
+        }
     }
 }

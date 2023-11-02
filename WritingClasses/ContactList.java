@@ -3,6 +3,7 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.Scanner;
 
 /**
@@ -42,6 +43,7 @@ public class ContactList {
                     lineScan.close();
                 }
                 fileScan.close();
+                Collections.sort(list); //maintain list is sorted order
             } catch (FileNotFoundException e) {
                 System.out.println("Could not open " + listFileName);
             }          
@@ -77,6 +79,7 @@ public class ContactList {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to " + listFile.getName());
         }
+        Collections.sort(list); //maintaining list in sorted order
     }
     
     /**
