@@ -1,5 +1,3 @@
-import javax.print.attribute.standard.MediaSize.Other;
-
 /**
  * Represents a contact with first and last name,
  * email address, and phone number.
