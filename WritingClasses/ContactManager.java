@@ -2,7 +2,6 @@ import java.util.Scanner;
 
 /**
  * Creates and interacts with a ContactList for demo purposes.
- * 
  * @author mvail
  */
 public class ContactManager {

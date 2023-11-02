@@ -98,6 +98,18 @@ public class ContactList {
         //TODO Rewrite listFile so it only contains remaining Contacts
         //  Header line
         //  Loop through all current Contacts
+        try {
+            PrintWriter pw = new PrintWriter(listFile);
+            pw.println(HEADER_LINE);
+            for (Contact c : list) {
+                pw.print(c.getLastName() + ",");
+                pw.print(c.getFirstName() + ",");
+                pw.print(c.getEmail() + ",");
+                pw.println(c.getPhoneNumber());
+            }
+        } catch (FileNotFoundException e) {
+            System.out.println("Unable to write to " + listFile.getName());
+        } //overwriting existing file
 
         return removedContact;
     }
