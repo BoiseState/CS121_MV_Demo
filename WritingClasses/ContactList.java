@@ -27,6 +27,7 @@ public class ContactList {
         list = new ArrayList<Contact>();
         listFile = new File(listFileName);
         if (listFile.exists() && listFile.canRead()) {
+            // Read listFile and rebuild the list
             try {
                 Scanner fileScan = new Scanner(listFile);
                 String headerLine = fileScan.nextLine(); //consuming header
@@ -48,6 +49,7 @@ public class ContactList {
                 System.out.println("Could not open " + listFileName);
             }          
         } else {
+            // Create a new listFile
             try {
                 PrintWriter pw = new PrintWriter(listFile);
                 pw.println(HEADER_LINE);
@@ -69,6 +71,8 @@ public class ContactList {
     public void addContact(String lastName, String firstName, String email, String phoneNumber) {
         Contact newContact = new Contact(firstName, lastName, email, phoneNumber);
         list.add(newContact);
+        
+        // Append new Contact data to listFile
         try {
             PrintWriter pw = new PrintWriter(new FileOutputStream(listFile, true));
             pw.print(lastName + ",");
@@ -79,6 +83,7 @@ public class ContactList {
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to " + listFile.getName());
         }
+        
         Collections.sort(list); //maintaining list in sorted order
     }
     
@@ -95,9 +100,7 @@ public class ContactList {
     public Contact removeContact(int index) {
         Contact removedContact = list.remove(index);
         
-        //TODO Rewrite listFile so it only contains remaining Contacts
-        //  Header line
-        //  Loop through all current Contacts
+        // Rewrite listFile so it only contains remaining Contacts
         try {
             PrintWriter pw = new PrintWriter(listFile);
             pw.println(HEADER_LINE);
@@ -109,7 +112,7 @@ public class ContactList {
             }
         } catch (FileNotFoundException e) {
             System.out.println("Unable to write to " + listFile.getName());
-        } //overwriting existing file
+        }
 
         return removedContact;
     }
