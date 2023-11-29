@@ -9,10 +9,10 @@ import javax.swing.JPanel;
  * @author mvail
  */
 public class PushCounterPanel extends JPanel {
-    private int pushCount;
-    private JLabel label;
-    private JButton upButton;
-    private JButton downButton;
+    private int pushCount;      //needed in listener
+    private JLabel label;       //needed in listeners or elsewhere after the constructor should be instance variables
+    private JButton upButton;   //needed in listener
+    private JButton downButton; //technically not actually needed because of how we wrote the if condition in listener
     private static final String LABEL = "Pushes: ";
 	
 	/**
@@ -23,15 +23,18 @@ public class PushCounterPanel extends JPanel {
 	{
         pushCount = 0;
 
+        //initialize components
         label = new JLabel(LABEL + pushCount);
         upButton = new JButton("Increase Count");
         downButton = new JButton("Decrease Count");
 
+        //connect listeners
         ActionListener buttonListener = new PushButtonListener();
         upButton.addActionListener(buttonListener);
         downButton.addActionListener(buttonListener);
 
-        this.add(upButton); //required or they never show up
+        //add components to this panel
+        this.add(upButton);
         this.add(downButton);
         this.add(label);
 	}
@@ -43,6 +46,8 @@ public class PushCounterPanel extends JPanel {
 
         @Override
         public void actionPerformed(ActionEvent e) {
+            //if listener is shared by more than one source, find out
+            // which so you can respond appropriately
             JButton sourceButton = (JButton) e.getSource();
             if (sourceButton == upButton) {
                 pushCount++;
