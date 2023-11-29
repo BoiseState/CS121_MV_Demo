@@ -12,7 +12,7 @@ public class PushCounterPanel extends JPanel {
     private int pushCount;      //needed in listener
     private JLabel label;       //needed in listeners or elsewhere after the constructor should be instance variables
     private JButton upButton;   //needed in listener
-    private JButton downButton; //technically not actually needed because of how we wrote the if condition in listener
+    private JButton downButton; //technically not needed in listener because of how we wrote the if condition
     private static final String LABEL = "Pushes: ";
 	
 	/**
