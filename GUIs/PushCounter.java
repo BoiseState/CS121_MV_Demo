@@ -16,7 +16,6 @@ public class PushCounter
    {
       JFrame frame = new JFrame("Push Counter");
       frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-      frame.setPreferredSize(new Dimension(200, 75));
 
       // If we want to add something, we must get the contentPanel and add to it.
       frame.getContentPane().add(new PushCounterPanel());
