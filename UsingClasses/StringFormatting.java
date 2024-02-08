@@ -61,7 +61,10 @@ public class StringFormatting {
         System.out.println("1.01 with percentFormat: " + percentFormat.format(oneAndOneHundredth));
         System.out.println();
 
-        System.out.printf("0.01 with printf .1f: %.1f\n", oneHundredth);
-        System.out.printf("0.05 with printf .1f: %.1f\n", fiveHundredths);
+        System.out.printf("0.01 with printf .1f: %10.1f\n", oneHundredth);
+        System.out.printf("0.05 with printf .1f: %10.1f\n", fiveHundredths);
+
+        System.out.println(String.format("%10.1f", 0.01));
+        System.out.println(String.format("%10.1f", 0.05));
     }
 }
