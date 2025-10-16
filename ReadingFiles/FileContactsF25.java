@@ -13,9 +13,11 @@ public class FileContactsF25 {
         try {
             //attempt to open the file in a Scanner - a "dangerous" operation, so in a try block
             Scanner fileScan = new Scanner(new File("list1"));
+            //"eating" the first line FOR THIS INPUT FILE because it is a header, not a contact
+            // Not every input file has a header line, so don't do this if it doesn't apply!
+            String headerLine = fileScan.nextLine(); 
             //read the file a line at a time
-            String headerLine = fileScan.nextLine(); //"eating" the first line because it is a header, not a contact
-            while(fileScan.hasNextLine()) {
+           while(fileScan.hasNextLine()) {
                 String line = fileScan.nextLine();
                 //now break that line into tokens
                 Scanner lineScan = new Scanner(line);
