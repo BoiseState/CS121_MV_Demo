@@ -5,8 +5,25 @@ import java.util.ArrayList;
  * @author mvail
  */
 public class DeckOfCards implements DeckOfCardsInterface {
+    //INSTANCE VARIABLES / ATTRIBUTES
+
     private ArrayList<Card> deck; //DeckOfCards 'has-a' ArrayList, and 'has-a' Card
-    
+
+    //CONSTANTS
+
+    public static final int TOTAL_CARDS = 52;
+
+    //CONSTRUCTOR
+
+    /**
+     * Generates a standard deck of playing cards.
+     * The deck is not shuffled, yet.
+     */
+    public DeckOfCards() {
+        //TODO
+    }
+
+    //METHODS / BEHAVIORS
 
     @Override
     public void shuffle() {

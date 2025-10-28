@@ -5,7 +5,7 @@
 public class Card implements Comparable<Card> {
     //instance variable / attributes
     private Suit suit; //Card 'has-a' Suit
-    private int faceValue;
+    private FaceValue faceValue;
 
     //constructor
 
@@ -14,15 +14,31 @@ public class Card implements Comparable<Card> {
      * @param faceValue
      * @param suit
      */
-    public Card(int faceValue, Suit suit) {
+    public Card(FaceValue faceValue, Suit suit) {
         this.faceValue = faceValue;
         this.suit = suit;
     }
 
+    /**
+     * Return card's suit
+     * @return suit
+     */
+    public Suit getSuit() {
+        return suit;
+    }
+
+    /**
+     * Return the card's face value
+     * @return face value
+     */
+    public FaceValue getFaceValue() {
+        return faceValue;
+    }
+
     @Override
     public int compareTo(Card otherCard) {
-        // int difference = this.faceValue - otherCard.faceValue;
-        // return difference;
-        return this.faceValue - otherCard.faceValue;
+        //"ordinal" is similar to an index, so a lower value card has a 
+        //lower ordinal value than a card with a higher value
+        return this.faceValue.ordinal() - otherCard.faceValue.ordinal();
     }
 }
