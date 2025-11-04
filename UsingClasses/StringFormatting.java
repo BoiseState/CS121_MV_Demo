@@ -11,7 +11,7 @@ public class StringFormatting {
         double fiveHundredths = 0.05;
         double nineHundredths = 0.09;
         double zero = 0.0;
-        double oneAndOneHundredth = 1.01;
+        double oneAndOneHundredth = 1.011;
 
         DecimalFormat showTenthsNoLeading = new DecimalFormat("#.0");
         DecimalFormat optTenthsNoLeading = new DecimalFormat("#.#");
