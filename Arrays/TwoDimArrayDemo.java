@@ -26,5 +26,12 @@ public class TwoDimArrayDemo {
             }
             System.out.println(); //go to next row of output
         }
+
+        //can also use initializer lists for mulit-dimensional arrays!
+        int[][] array2 = { //initialize a 3 row, 5 col 2D array
+            {1, 2, 3, 4, 5},
+            {6, 7, 8, 9, 10},
+            {11, 12, 13, 14, 15}
+        };
     }
 }
