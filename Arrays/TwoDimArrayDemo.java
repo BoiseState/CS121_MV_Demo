@@ -9,8 +9,15 @@ public class TwoDimArrayDemo {
         Random rand = new Random();
         
         final int UPPER_BOUND = 100;
+        final int MIN_ROWS = 3;
+        final int MAX_ROWS = 6;
+        final int MIN_COLS = 3;
+        final int MAX_COLS = 10;
         
-        int[][] array1 = new int[5][10]; //5 rows, 10 columns
+        //create a 2D array of random dimensions
+        // where num rows is between 3 and 6
+        // and num cols is between 3 and 10;
+        int[][] array1 = new int[rand.nextInt(MAX_ROWS-MIN_ROWS)+MIN_ROWS][rand.nextInt(MAX_COLS-MIN_COLS)+MIN_COLS];
         
         //fill array with random ints from 1 to 100
         for (int row = 0; row < array1.length; row++) {
