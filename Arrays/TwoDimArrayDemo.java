@@ -40,5 +40,22 @@ public class TwoDimArrayDemo {
             {6, 7, 8, 9, 10},
             {11, 12, 13, 14, 15}
         };
+
+        //print first row
+        System.out.println("FIRST ROW");
+        for (int col = 0; col < array1[0].length; col++) { //only going through row 0
+            System.out.printf("%3d ", array1[0][col]);
+        }
+        System.out.println();
+
+        //print second column
+        System.out.println("SECOND COLUMN");
+        for (int row = 0; row < array1.length; row++) { //only going through col 1
+            System.out.println(array1[row][1]);
+        }
+
+        //print last value
+        System.out.println("LAST VALUE");
+        System.out.println(array1[array1.length-1][array1[array1.length-1].length-1]); //ew
     }
 }
