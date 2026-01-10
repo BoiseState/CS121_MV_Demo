@@ -3,32 +3,56 @@
  * is demonstrating some basic primitive variable declarations, assignments, and
  * expressions.
  * 
+ * (This style of comment is called a Javadoc. Every class and method should have a
+ * javadoc with a description and any appropriate tags. This class javadocs includes
+ * an author tag, as all class javadocs should.)
+ * 
  * @author mvail
  */
 public class PrimitivesDemo {
     public static void main(String[] args) {
         /*
          * Numeric primitive variables
+         *
+         * (This comment is a regular block comment. The format is subtly different
+         * from a javadoc. Javadocs start with /** (slash and two asterisks) and
+         * regular block comments start with /* (slash and one asterisk). Both end
+         * with a single asterik and slash. Javadoc comments are only appropriate
+         * before a class or method header and, occassionally, some variables and
+         * constants that we haven't learned about, yet. Regular block comments
+         * and line comments can be used inside methods.)
          */
+        int firstInt;       //declaration of a new int variable called firstInt
+        firstInt = 10;      //assignment of a value to firstInt
+        int secondInt = 3;  //declaration and assignment in one: initialization
 
-        int firstInt = 10;
-        int secondInt = 3;
+        // This is a line comment. Anytime you have two slashes // the compiler
+        // ignores everything that follows. Line comments can be on their own
+        // line of the program, like these are, or they can follow a line of code.
 
-        int sum = firstInt + secondInt;
+        // A lot is going on in the following initialization statement. On the
+        // right side of the = assignment operator, an expression is adding the 
+        // current value of firstInt to the current value of secondInt. The result
+        // of this sum is then assigned to a new int variable.
+        int sum = firstInt + secondInt; // line comment following a statement
 
+        // This statement concatenates our primative int variables with some
+        // short String literals inside the parentheses, then passes the resulting
+        // String to the System.out.println() method to diplay the result to the
+        // console/terminal accessed by System.out.
         System.out.println(firstInt + " + " + secondInt + " = " + sum);
 
-        //the division in this expression is an integer division - both numerator and denomenator
-        //are integers and the result is only the whole part of the result
+        // The division in this expression is an integer division - both numerator and
+        // denomenator are integers and the result is only the whole part of the result.
         System.out.println(firstInt + " / " + secondInt + " = " + (firstInt / secondInt));
-        //the modulus division in this expression returns the remainder of the integer division
+        //The modulus division in this expression returns the remainder of the integer division.
         System.out.println(firstInt + " % " + secondInt + " = " + (firstInt % secondInt));
 
         //int badPi = 3.14; //an invalid narrowing assignment of a double to an int
 
-        double decentPi = 3.14159;
+        double decentPi = 3.14159; //a valid assignment of a double literal to a double variable
 
-        double notPi = 3; //valid widening conversion of an int to a double
+        double notPi = 3;   //valid widening conversion of an int literal to a double
 
         /*
          * Boolean primitive variables
@@ -41,7 +65,6 @@ public class PrimitivesDemo {
         /*
          * Character primitive variables
          */
-
 
         char firstChar = 'a'; //characters use single quotes
         
